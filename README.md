@@ -7,13 +7,13 @@ VUE3 全局数据存储 & 界面刷新缓存机制
 [![NPM version](https://img.shields.io/npm/v/vue3-persistedstore.svg)](https://www.npmjs.com/package/vue3-persistedstore)
 [![NPM downloads](https://img.shields.io/npm/dm/vue3-persistedstore.svg)](https://www.npmjs.com/package/vue3-persistedstore)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![MIT license](https://img.shields.io/github/license/robinvdvleuten/vue3-persistedstore.svg)](https://github.com/robinvdvleuten/vue3-persistedstore/blob/master/LICENSE)
+[![MIT license](https://img.shields.io/github/license/Tinolee615/vue3-persistedstore.svg)](https://github.com/Tinolee615/vue3-persistedstore/blob/main/LICENSE)
 
 ## Install
 
 ```bash
 npm install --save vue3-persistedstore
-or 
+  or
 yarn add vue3-persistedstore -S
 ```
 
@@ -98,9 +98,9 @@ export default defineComponent({
 
 ### `createPersistedStore([options])`
 
-- `key <String>`: store模块命名空间，默认 `@@normal`。
-- `storage <Storage>`: 数据持久化存储方式，`window.sessionStorage | window.localStorage`， 默认 `window.localStorage`.
-- `modules <object>`: store模块，默认 `{}`。
+- `key <String>`: store模块命名空间，默认: `@@normal`。
+- `storage <Storage>`: 数据持久化存储方式，`window.sessionStorage | window.localStorage`， 默认: `window.localStorage`.
+- `modules <object>`: store模块，默认: `{}`。
 
 ## License
 
