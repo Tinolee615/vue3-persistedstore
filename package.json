@@ -1,0 +1,81 @@
+{
+  "name": "vue3-persistedstore",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "tinolee ",
+  "keywords": [
+    "vue3",
+    "Storage",
+    "TypeScript"
+  ],
+  "source": "src/index.ts",
+  "main": "dist/vue3-persistedstore.js",
+  "module": "dist/vue3-persistedstore.esm.js",
+  "unpkg": "dist/vue3-persistedstore.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rimraf dist && microbundle --external all --name createPersistedStore",
+    "prettier": "prettier --write ./src",
+    "lint": "eslint ./src --ext .js,.ts",
+    "lint-fix": "eslint --fix ./src --ext .js,.ts",
+    "lint:eslint": "eslint \"{src,mock}/**/*.{ts}\" --fix",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:pretty": "pretty-quick --staged",
+    "prepare": "husky install",
+    "jest": "jest --coverage"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^27.2.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "jest": "^27.2.4",
+    "lint-staged": "^11.1.2",
+    "microbundle": "^0.13.3",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "vue": "^3.2.19"
+  },
+  "peerDependencies": {
+    "vue": "^3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint ./src --ext .js,.ts",
+      "eslint --fix ./src --ext .js,.ts",
+      "eslint \"{src,mock}/**/*.{ts}\" --fix",
+      "lint-staged -c ./.husky/lintstagedrc.js",
+      "pretty-quick --staged"
+    ]
+  }
+}
