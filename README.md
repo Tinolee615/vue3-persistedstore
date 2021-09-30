@@ -21,7 +21,7 @@ yarn add vue3-persistedstore -S
 
 ``` js
 // store/index.ts
-import createPersistedStore from 'vue3-persistedstate'
+import createPersistedStore from 'vue3-persistedstore'
 import xxx from './moudles/xxx'
 export default createPersistedStore({
   key: 'client',
@@ -37,7 +37,7 @@ export default createPersistedStore({
 ``` js
 // modules/UserStore.ts
 import { reactive } from 'vue'
-import { IStore } from 'vue3-persistedstate'
+import { IStore } from 'vue3-persistedstore'
 
 declare interface UserUpdate {
   updateCount: Function
@@ -65,7 +65,7 @@ export default store
 export { state, IUserState, UserUpdate }
 
 // store/index.ts
-import createPersistedStore from 'vue3-persistedstate'
+import createPersistedStore from 'vue3-persistedstore'
 import UserStore from './moudles/UserStore'
 export default createPersistedStore({
   key: 'client',
