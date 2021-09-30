@@ -52,7 +52,7 @@ const state: IUserState = reactive({
 })
 
 const store: IStore<IUserState, UserUpdate> = {
-  persistedState: true,
+  persistedState: true, // 是否缓存数据
   state: state,
   update: {
     updateCount: (data) => {
