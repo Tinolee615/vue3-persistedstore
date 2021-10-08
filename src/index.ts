@@ -19,9 +19,10 @@ declare interface Options {
 }
 
 export default (options?: Options): ((app: App) => void) => {
+  debugger
   options = options || ({} as Options)
   const storage = options.storage || (window && window.localStorage)
-  const storeKey = `@@${options.key}` || '@@normal'
+  const storeKey = (options.key && `@@${options.key}`) || '@@normal'
   const Stores = options.modules || {}
   return (app: App) => {
     const keys = Stores && Object.keys(Stores)
